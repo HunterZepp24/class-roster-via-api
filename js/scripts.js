@@ -10,29 +10,31 @@ fetch(url)
   .then( data  => {
     // check-check: get one image
     // Note: Webflow returns data in array called `items`
-    console.log(data.records);
-    console.log(data.records[0].fields);
-    console.log(data.records[0].fields.Name);
-    console.log(data.records[0].fields.Emoji);
-    console.log(data.records[0].fields.Color);
-    console.log(data.records[0].fields.Image[0].url);
+    console.log(data);
+    console.log(data[5]);
+    console.log(data[5].Name);
+    console.log(data[5].Image);
+    console.log(data[5].Emoji);
+    console.log(data[5].Quote);
+    console.log(data[5].Superpower);
+    console.log(data[5].Color);
 
     // get container for data
-    const gallery = document.querySelector(".gallery");
+    const roster = document.querySelector(".roster");
 
     // loop through data
-    data.records.forEach( student => {
+    data.forEach( student => {
       
       // template
       const template = `
           <figure>
-            <figcaption>${student.fields.Name}</figcaption>
-            <p>${student.fields.Emoji}</p>
-            <img src="${student.fields.Image[0].url}" alt="${student.fields.Name}">
+            <figcaption>${student.Name}</figcaption>
+            <p>${student.Emoji}</p>
+            <img src="${student.Image}" alt="${student.Name}">
           </figure>
        `;
 
       // insert EACH `student` record into container
-      gallery.insertAdjacentHTML("afterbegin", template);
+      roster.insertAdjacentHTML("afterbegin", template);
     });
   });
