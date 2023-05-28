@@ -43,7 +43,7 @@ fetch(url)
       // insert EACH `student` record into container
       roster.insertAdjacentHTML("afterbegin", template);
 
-      // change the boxshadow color of each to student.Color by id
+      // change the boxshadow color of each card to student.Color by id
       document.getElementById(student.Name).style.boxShadow = `0 0 20px 20px ${student.Color}, 0 0 20px 20px ${student.Color} inset`;
 
       // change the color of each h1 to student.Color
