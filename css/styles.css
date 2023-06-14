@@ -20,6 +20,7 @@ img {
     display: block;
     max-width: 100%;
     height: auto;
+    width: 100vw;
 }
 
 .card {
@@ -63,6 +64,7 @@ img {
     font-size: 1rem;
     text-align: center;
     padding: 2rem;
+    width: 50%;
 }
 
 .card h1 {
